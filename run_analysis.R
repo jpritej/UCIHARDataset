@@ -30,7 +30,7 @@ X_data<-arrange(X_data,id,activity) #order data by subject ID and activity
 
 ## Step 2: Extracts only the measurements on the mean and standard deviation for
 ##         each measurement. 
-mean_std<-X_data[,c(1,2,2+sort(c(grep("-mean\\(\\)",features$V2),
+extracteddata<-X_data[,c(1,2,2+sort(c(grep("-mean\\(\\)",features$V2),
                                  grep("-std\\(\\)",features$V2))))]
 
 ## Step 3: Uses descriptive activity names to name the activities in the data 
@@ -38,14 +38,13 @@ mean_std<-X_data[,c(1,2,2+sort(c(grep("-mean\\(\\)",features$V2),
 activity_labels<-read.table("./activity_labels.txt")
 
 ## Step 4: Appropriately labels the data set with descriptive activity names. 
-mean_std$activity<-activity_labels[mean_std$activity,2]
+extracteddata$activity<-activity_labels[extracteddata$activity,2]
 
 ## Step5: Creates a second, independent tidy data set with the average of each 
 ##        variable for each activity and each subject. 
-splitteddata<-split(mean_std[,3:68],interaction(mean_std$id,mean_std$activity),
+splitteddata<-split(extracteddata[,3:68],interaction(extracteddata$id,extracteddata$activity),
                     drop=TRUE)            #split data by subject ID and activity
 tidydata<-t(sapply(splitteddata,colMeans))#obtain a matrix [ID.activity,feature]
 
 ## Save tidy data in a file
-write.table(tidydata, file="./tidydata.txt", sep="\t", row.names = FALSE) 
-write.table(rownames(tidydata), file="./row_names.txt", sep="\t", row.names = FALSE) 
+write.table(tidydata, file="./tidydata.txt", sep="\t") 

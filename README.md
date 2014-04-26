@@ -27,4 +27,4 @@ install.packages("plyr")
 ```
 * Step 5: The file *tidydata.txt* with the tidy data set can be found inside the working directory.
 
-The above steps took 59 secons running on a Macbook Pro Mid 2010 (2.4 GHz Intel Core 2 Duo and 8 GB 1067 MHz DDR3) with RStudio 0.98.501 and Mac OS X 10.9.2 (Mavericks).
+The above steps took 58 seconds running on a Macbook Pro Mid 2010 (2.4 GHz Intel Core 2 Duo and 8 GB 1067 MHz DDR3) with RStudio 0.98.501 and Mac OS X 10.9.2 (Mavericks).
