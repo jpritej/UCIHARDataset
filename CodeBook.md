@@ -14,8 +14,6 @@ In summary, the matrix has the form:
                 | mean(feature) |    ...    | mean(feature) |
 ----------------|---------------|-----------|---------------| 
   ID.activity   |     value     |    ...    |    value      |   
-       .        |       .       |     .     |      .        |   
-       .        |       .       |     .     |      .        |   
-       .        |       .       |     .     |      .        |   
+    $\vdots$    |       .       |  $\vdots$ |    $\vdots$   |   
   ID.activity   |     value     |    ...    |    value      |   
 
