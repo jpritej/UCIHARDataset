@@ -21,7 +21,7 @@ In order to replicate the process followed to obtain the tidy data, one have to 
 ```{r}
 source("run_analysis.R")
 ```
-The library "plyr" should be installed. Otherwise run:
+The library *plyr* should be installed. Otherwise run:
 ```{r}
 install.packages("plyr")
 ```
